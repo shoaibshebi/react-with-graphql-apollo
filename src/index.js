@@ -5,10 +5,26 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
+const defaultOptions = {
+  watchQuery: {
+    fetchPolicy: "no-cache",
+    errorPolicy: "ignore",
+  },
+  query: {
+    fetchPolicy: "no-cache",
+    errorPolicy: "ignore",
+  },
+};
 const client = new ApolloClient({
-  uri: "https://rickandmortyapi.com/graphql",
+  uri: "https://api.spacex.land/graphql/",
   cache: new InMemoryCache(),
+  // defaultOptions: defaultOptions,
 });
+
+// const client = new ApolloClient({
+//   uri: "https://api.spacex.land/graphql/",
+//   cache: new InMemoryCache(),
+// });
 
 ReactDOM.render(
   <React.StrictMode>

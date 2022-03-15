@@ -1,18 +1,22 @@
-import CharactersList from "./pages/CharactersList";
-import Character from "./pages/Character";
+import UsersList from "./pages/UsersList";
+import UserByPk from "./pages/UserByPk";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from "./pages/Search";
+import UsersByRestCall from "./pages/UsersByRestCall";
+import Users from "./CRUD/Users";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
-          <Route path="/all" element={<CharactersList />} />
-          <Route path="/:id" element={<Character />} />
+          <Route path="/all" element={<UsersList />} />
+          <Route path="/:id" element={<UserByPk />} />
           <Route path="/search" element={<Search />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      {/* <UsersByRestCall /> */}
+      <Users />
     </div>
   );
 }
