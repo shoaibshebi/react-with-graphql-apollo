@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+
+import apolloClient from "./apolloClient";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import "./index.css";
 
 const defaultOptions = {
   watchQuery: {
@@ -15,20 +17,15 @@ const defaultOptions = {
     errorPolicy: "ignore",
   },
 };
-const client = new ApolloClient({
-  uri: "https://api.spacex.land/graphql/",
-  cache: new InMemoryCache(),
-  // defaultOptions: defaultOptions,
-});
-
 // const client = new ApolloClient({
 //   uri: "https://api.spacex.land/graphql/",
 //   cache: new InMemoryCache(),
+//   defaultOptions: defaultOptions,
 // });
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
+    <ApolloProvider client={apolloClient}>
       <App />
     </ApolloProvider>
   </React.StrictMode>,
