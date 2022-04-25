@@ -81,3 +81,15 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
  */
+
+// const client = new ApolloClient({
+//   uri: "https://api.spacex.land/graphql/",
+//   cache: new InMemoryCache(),
+//   defaultOptions: defaultOptions,
+// });
+
+// import { RestLink } from "apollo-link-rest";
+
+// const restLink = new RestLink({
+//   uri: "https://api.spacex.land/graphql/",
+// });

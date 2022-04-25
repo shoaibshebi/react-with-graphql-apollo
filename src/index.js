@@ -17,11 +17,6 @@ const defaultOptions = {
     errorPolicy: "ignore",
   },
 };
-// const client = new ApolloClient({
-//   uri: "https://api.spacex.land/graphql/",
-//   cache: new InMemoryCache(),
-//   defaultOptions: defaultOptions,
-// });
 
 ReactDOM.render(
   <React.StrictMode>

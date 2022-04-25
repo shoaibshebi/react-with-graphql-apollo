@@ -18,8 +18,7 @@ export const GET_USERSS = gql`
 const BASE_URL = "https://api.spacex.land/graphql/";
 
 export default function Users() {
-  const { loading, error, data } = useQuery(GET_USERSS);
-  console.log("our data ", data);
+  const { data } = useQuery(GET_USERSS);
   const [user, setUser] = useState("");
   const [items, setItems] = useState([]);
 
@@ -27,7 +26,6 @@ export default function Users() {
     const data = await request(BASE_URL, GET_USERS, {
       limit: 10,
     });
-    // console.log(data.users);
     setItems([...data?.users]);
   }, []);
 

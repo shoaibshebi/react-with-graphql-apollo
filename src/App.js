@@ -5,17 +5,22 @@ import Search from "./pages/Search";
 import UsersByRestCall from "./pages/UsersByRestCall";
 import Users from "./CRUD/Users";
 
+const randomFlag = false;
+
 function App() {
   return (
     <div className="App">
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/all" element={<UsersList />} />
-          <Route path="/:id" element={<UserByPk />} />
-          <Route path="/search" element={<Search />} />
-        </Routes>
-      </BrowserRouter> */}
-      {/* <UsersByRestCall /> */}
+      {randomFlag ? (
+        <BrowserRouter>
+          <Routes>
+            <Route path="/all" element={<UsersList />} />
+            <Route path="/:id" element={<UserByPk />} />
+            <Route path="/search" element={<Search />} />
+          </Routes>
+        </BrowserRouter>
+      ) : (
+        <UsersByRestCall />
+      )}
       <Users />
     </div>
   );
